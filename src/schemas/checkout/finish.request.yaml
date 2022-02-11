@@ -17,6 +17,7 @@ properties:
 
   # pagamentos
   paymentMethods:
+    description: Formas de pagamentos escolhidas para o pedido.
     type: array
     items:
       type: object
@@ -44,7 +45,7 @@ properties:
         encryptedCardData:
           description: |
             Dados criptografados do cartão de crédito.
-            Obrigatório caso a forma de pagamento seja Cartão de crédito (payment.method.creditcard).
+            **Obrigatório caso a forma de pagamento seja Cartão de crédito (payment.method.creditcard).**
           type: string
           example: >
             h+a0ZixJXw8OAlGhkteSWCp6kjPikqVI82pddkoLrpwJmd/rPU7dC+V1UcGbF0CaWUVTHaIoifvHoKo60xlBPWdIxx5GOfHVaPwpaiKv68Q2
@@ -65,6 +66,7 @@ properties:
   # entregas
   shippings:
     type: array
+    description: Formas de entregas escolhidas para o pedido.
     items:
       type: object
       required:
@@ -107,12 +109,14 @@ properties:
         shoppingStoreReferenceCode:
           description: |
             Loja do carrinho correspondente à entrega selecionada.
+            **Obrigatório para lojas de multiplos cds ou marketplaces.**
           type: string
           example: shoppingStoreExample
 
   # atributos personalizados de pedido
   attributeValues:
     type: array
+    description: Dados personalizados para serem gravados no pedido.
     items:
       type: object
       properties:
@@ -132,6 +136,7 @@ properties:
 
   # dados de antifraude
   anti-fraud:
+    description: Dados da sessão relativos à antifraude.
     type: object
     properties:
       session:
