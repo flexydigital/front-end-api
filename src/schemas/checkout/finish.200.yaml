@@ -1,0 +1,664 @@
+# generated with https://roger13.github.io/SwagDefGen/
+
+type: object
+
+properties:
+
+  number:
+    type: string
+    example: 2202975272
+  total:
+    type: integer
+    format: int32
+    example: 315
+  promotionDiscount:
+    type: integer
+    format: int32
+    example: 0
+  shippingIpi:
+    type: integer
+    format: int32
+    example: 0
+  taxSubstitution:
+    type: integer
+    format: int32
+    example: 0
+  grossAmount:
+    type: integer
+    format: int32
+    example: 315
+  createdAt:
+    type: string
+    format: date-time
+    example: 2022-02-02T16:25:03.000Z
+  updatedAt:
+    type: string
+    format: date-time
+    example: 2022-02-02T16:38:31.000Z
+  deletedAt:
+    type: string
+    nullable: true
+  shippingTotal:
+    type: integer
+    format: int32
+    example: 0
+  shippingDiscount:
+    type: integer
+    format: int32
+    example: 0
+  masterSale:
+    type: string
+    nullable: true
+  status:
+    type: object
+    properties:
+      name:
+        type: string
+        example: status.paid
+      info:
+        type: string
+        nullable: true
+      createdAt:
+        type: string
+        format: date-time
+        example: 2022-02-02T16:38:29.000Z
+      updatedBy:
+        type: object
+        properties:
+          email:
+            type: string
+            example: admin@flexy.com.br
+          isAPI:
+            type: boolean
+          isSystem:
+            type: boolean
+  items:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Pão de Sal (10)
+        quantity:
+          type: integer
+          format: int32
+          example: 7
+        unitPrice:
+          type: integer
+          format: int32
+          example: 45
+        totalPrice:
+          type: integer
+          format: int32
+          example: 315
+        promotionDiscount:
+          type: integer
+          format: int32
+          example: 0
+        grossAmount:
+          type: integer
+          format: int32
+          example: 315
+        taxSubstitution:
+          type: integer
+          format: int32
+          example: 0
+        trackingCode:
+          type: string
+          nullable: true
+        additionalTo:
+          type: string
+          nullable: true
+        shippingIpi:
+          type: integer
+          format: int32
+          example: 0
+        variant:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+              example: 20011
+            referenceCode:
+              type: string
+              example: 10
+            productReferenceCode:
+              type: string
+              example: 10
+            eanCode:
+              type: string
+              example: null
+            presentation:
+              type: string
+              example: Pão de Sal
+            url:
+              type: string
+              example: /produto/10/pao-de-sal
+            price:
+              type: integer
+              format: int32
+              example: 45
+            promotionalPrice:
+              type: string
+              nullable: true
+            master:
+              type: boolean
+            masterImage:
+              type: string
+              nullable: true
+            isFractionalStock:
+              type: boolean
+            stock:
+              type: object
+              properties:
+                quantity:
+                  type: integer
+                  format: int32
+                  example: 1000
+                minimumQuantity:
+                  type: integer
+                  format: int32
+                  example: 0
+                distributionCenter:
+                  type: object
+                  properties:
+                    referenceCode:
+                      type: string
+                      example: shopping-reference-code
+                    postcode:
+                      type: string
+                      example: 83706493
+                    city:
+                      type: string
+                      example: Araucária
+                    state:
+                      type: string
+                      example: PR
+                    country:
+                      type: string
+                      example: Brasil
+                    district:
+                      type: string
+                      example: Capela Velha
+                    street:
+                      type: string
+                      example: Rua Francisco Galarda
+                    complement:
+                      type: string
+                      example: casa
+                    number:
+                      type: integer
+                      format: int32
+                      example: 384
+            distributionCenterList:
+              type: array
+              items:
+                type: object
+                properties:
+                  quantity:
+                    type: integer
+                    format: int32
+                    example: 1000
+                  minimumQuantity:
+                    type: integer
+                    format: int32
+                    example: 0
+                  distributionCenter:
+                    type: object
+                    properties:
+                      referenceCode:
+                        type: string
+                        example: shopping-reference-code
+                      postcode:
+                        type: string
+                        example: 83706493
+                      city:
+                        type: string
+                        example: Araucária
+                      state:
+                        type: string
+                        example: PR
+                      country:
+                        type: string
+                        example: Brasil
+                      district:
+                        type: string
+                        example: Capela Velha
+                      street:
+                        type: string
+                        example: Rua Francisco Galarda
+                      complement:
+                        type: string
+                        example: casa
+                      number:
+                        type: integer
+                        format: int32
+                        example: 384
+            priceList:
+              type: string
+              nullable: true
+            dimensionGroup:
+              type: object
+              properties:
+                height:
+                  type: integer
+                  format: int32
+                  example: 0
+                width:
+                  type: integer
+                  format: int32
+                  example: 0
+                depth:
+                  type: integer
+                  format: int32
+                  example: 0
+                weight:
+                  type: integer
+                  format: int32
+                  example: 0
+            additionalDeliveryTime:
+              type: integer
+              format: int32
+              example: 0
+            availableAt:
+              type: string
+              nullable: true
+            deletedAt:
+              type: string
+              nullable: true
+        shippingAddress:
+          type: object
+          properties:
+            postCode:
+              type: string
+              example: 83706493
+            city:
+              type: string
+              example: Araucária
+            state:
+              type: string
+              example: PR
+            country:
+              type: string
+              example: Brasil
+            street:
+              type: string
+              example: Rua Francisco Galarda
+            district:
+              type: string
+              example: Capela Velha
+            complement:
+              type: string
+              example: casa
+            number:
+              type: integer
+              format: int32
+              example: 384
+        promotionsApplied:
+          nullable: true
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                example: 2
+              referenceCode:
+                type: string
+                example: 2
+              type:
+                type: string
+                example: promotion.type.cart
+              discountApplied:
+                type: integer
+                format: int32
+                example: 10
+              shoppingStore:
+                type: object
+                properties:
+                  referenceCode:
+                    type: string
+                    example: loja
+        taxSubstitutionApplied:
+          type: string
+          nullable: true
+        taxSubstitutionsApplied:
+          nullable: true
+          type: array
+          items:
+            type: object
+            properties:
+              taxBilled:
+                type: number
+                example: 0.03
+              mvaOriginal:
+                type: integer
+                format: int32
+                example: 1
+              mvaAdjusted:
+                type: string
+                format: nullable
+              internalAliquot:
+                type: integer
+                format: int32
+                example: 17
+              internalAliquotAdjustedByProduct:
+                type: integer
+                format: int32
+                example: 10
+              interstateAliquot:
+                type: string
+                format: nullable
+              interstateAliquotAdjustedByProduct:
+                type: integer
+                format: int32
+                example: 5
+              freightRate:
+                type: number
+                example: 3.15
+              ipi:
+                type: number
+                example: 0.14
+              itemUnitPrice:
+                type: integer
+                format: int32
+                example: 15
+              itemTotalPrice:
+                type: integer
+                format: int32
+                example: 15
+              variantReferenceCode:
+                type: string
+                example: icms-1
+              productReferenceCode:
+                type: string
+                example: icms-1
+        shippingMethod:
+          type: object
+          properties:
+            name:
+              type: string
+              example: Retirar na loja
+            referenceCode:
+              type: string
+              example: shipping.method.pickuponplace
+            estimatedDeliveryFrom:
+              type: integer
+              format: int32
+              example: 2
+            estimatedDeliveryTo:
+              type: integer
+              format: int32
+              example: 2
+            deliveryTimeFrom:
+              type: string
+              nullable: true
+            deliveryTimeTo:
+              type: string
+              nullable: true
+            price:
+              type: integer
+              format: int32
+              example: 0
+            originalPrice:
+              type: integer
+              format: int32
+              example: 0
+            discountApplied:
+              type: integer
+              format: int32
+              example: 0
+            carrier:
+              type: string
+              nullable: true
+            observations:
+              type: string
+              nullable: true
+            quoteId:
+              type: string
+              nullable: true
+            gatewayInfo:
+              nullable: true
+              type: array
+              items:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: cnpj
+                  value:
+                    type: string
+                    example: 12.345.678/0001-23
+        properties:
+          type: array
+          nullable: true
+        itemsKit:
+          type: array
+          nullable: true
+        giftList:
+          type: string
+          nullable: true
+  promotionsApplied:
+    type: array
+    nullable: true
+  customer:
+    type: object
+    properties:
+      firstName:
+        type: string
+        example: Testes Flexy
+      lastName:
+        type: string
+        example: aaa
+      gender:
+        type: integer
+        format: int32
+        example: 1
+      dateOfBirth:
+        type: string
+        format: date
+        example: 2000-01-01T00:00:00.000Z
+      identityNumber:
+        type: string
+        example: 67473477811
+      primaryPhone:
+        type: string
+        example: (11) 11111-1119
+      secondPhone:
+        type: string
+        nullable: true
+      address:
+        type: object
+        properties:
+          postCode:
+            type: string
+            example: 88032005
+          city:
+            type: string
+            example: Florianópolis
+          state:
+            type: string
+            example: SC
+          country:
+            type: string
+            example: Brasil
+          street:
+            type: string
+            example: Jose Carlos Daux
+          district:
+            type: string
+            example: Saco Grande
+          complement:
+            type: string
+            example: Business Decor Sala 05 Flexy
+          number:
+            type: integer
+            format: int32
+            example: 5025
+      createdAt:
+        type: string
+        example: 2021-07-06T17:38:13.000Z
+      updatedAt:
+        type: string
+        example: 2021-11-12T11:59:00.000Z
+      customerType:
+        type: object
+        properties:
+          name:
+            type: string
+            example: Consumidor
+          referenceCode:
+            type: string
+            example: default.customer
+          usesTaxSubstitution:
+            type: boolean
+          priceList:
+            type: string
+            nullable: true
+      priceList:
+        type: object
+        properties:
+          name:
+            type: string
+            example: Consumidor
+          referenceCode:
+            type: string
+            example: 1234
+      email:
+        type: string
+        example: testes@flexy.com.br
+  user:
+    type: object
+    properties:
+      responsible:
+        type: string
+        example: Testes Flexy aaa
+      email:
+        type: string
+        example: testes@flexy.com.br
+  paymentMethods:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          example: payment.method.negotiable
+        installments:
+          type: string
+          nullable: true
+        amount:
+          type: integer
+          format: int32
+          example: 315
+        discount:
+          type: integer
+          format: int32
+          example: 0
+        addition:
+          type: integer
+          format: int32
+          example: 0
+        boletoRule:
+          type: string
+          nullable: true
+        interestValue:
+          type: integer
+          format: int32
+          example: 0
+        boletoUrl:
+          type: string
+          nullable: true
+        creditCardToken:
+          type: string
+          nullable: true
+        authorizationCode:
+          type: string
+          nullable: true
+        transactionId:
+          type: string
+          nullable: true
+        nsu:
+          type: string
+          nullable: true
+        pixPaymentKey:
+          type: string
+          nullable: true
+  orderGatewayInfo:
+    type: object
+    properties:
+      gatewayReferenceCode:
+        type: string
+        example: payment.gateway.moip
+        enum:
+          - payment.gateway.payu
+          - payment.gateway.moip
+          - payment.gateway.cielo
+          - payment.gateway.pagseguro
+          - payment.gateway.pagarme
+          - payment.gateway.rede
+          - payment.gateway.mundipagg
+          - payment.gateway.juno
+          - payment.gateway.getnet
+          - payment.gateway.safetopay
+          - payment.gateway.stripe
+          - payment.gateway.picpay
+      data:
+        type: array
+        items:
+          type: object
+          properties:
+            code:
+              type: string
+              example: order-id
+              enum:
+                - transaction-id
+                - transaction-nsu
+                - additional-value-percentage
+                - authorized-value
+                - captured-value
+                - refunded-value
+                - refunded-status
+                - capture-nsu
+                - custody-id
+                - custody-status
+            value:
+              type: string
+              example: ORD-1MP123123123
+  shoppingStore:
+    type: string
+    nullable: true
+  agent:
+    type: string
+    nullable: true
+  agents:
+    type: array
+    items:
+      type: object
+      properties:
+        email:
+          type: string
+          example: representante@flexy.com.br
+        commission:
+          type: integer
+          format: int32
+          example: 0
+        token:
+          type: string
+          example: 78231b65
+  attributeValues:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Observação de pedido
+        referenceCode:
+          type: string
+          example: observacao-de-pedido
+        value:
+          type: string
+          example: Observação feita no pedido

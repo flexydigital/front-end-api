@@ -1,0 +1,24 @@
+post:
+  summary: Realiza pedido
+  operationId: checkoutFinish
+  description: Realiza o pedido, manando as informações de compra para a plataforma
+  tags:
+    - Checkout
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/checkout/finish.request.yaml"
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/checkout/finish.200.yaml"
+    default:
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/checkout/finish.200.yaml"

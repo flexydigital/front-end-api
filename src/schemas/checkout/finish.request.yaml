@@ -1,0 +1,142 @@
+# generated with https://roger13.github.io/SwagDefGen/
+
+type: object
+required:
+  - paymentMethods
+  - shippings
+properties:
+
+  # número do pedido
+  orderNumber:
+    type: string
+    description: |
+      Número do pedido, pode ser numérico ou alfanumérico.
+      Caso contenha letras, o sistema não diferenciará maiúsculas e minúsculas.
+      Por exemplo, caso já exista um pedido de número 'ABCD' não podem ser criados pedidos 'abcd', 'ABcd' e semelhates.
+    example: 1234567890
+
+  # pagamentos
+  paymentMethods:
+    type: array
+    items:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Forma de pagamento escolhida.
+          example: payment.method.creditcard
+          enum:
+            - payment.method.creditcard
+            - payment.method.boleto
+            - payment.method.boletoafaturar
+            - payment.method.pix
+            - payment.method.deposit
+            - payment.method.forfree
+            - payment.method.negotiable
+            - payment.method.digitalwallet
+            - payment.method.digitalwallet.applepay
+            - payment.method.digitalwallet.picpay
+        value:
+          type: integer
+          description: Valor do pagamento feito por essa forma de pagamento. Em centavos.
+          format: int64
+          example: 10000
+        encryptedCardData:
+          description: |
+            Dados criptografados do cartão de crédito.
+            Obrigatório caso a forma de pagamento seja Cartão de crédito (payment.method.creditcard).
+          type: string
+          example: >
+            h+a0ZixJXw8OAlGhkteSWCp6kjPikqVI82pddkoLrpwJmd/rPU7dC+V1UcGbF0CaWUVTHaIoifvHoKo60xlBPWdIxx5GOfHVaPwpaiKv68Q2
+            sbHw3pQPGiKAWvgrVdHdJdKKfSfOqzFCm2m3jUGUC3nmr38ST4QlH1mFTKGeG+bdU2Ei3SVuQiPqMEiEhCH4IDHiAfFtmo5jdAeFiUObAoc2
+            YQJ3AU/8xJtKtIirzBlPcNBe4DgzzQKa6AMPu0VgY08WuzkZmn1MNh9cvidvJw==
+        installments:
+          type: integer
+          format: int32
+          description: |
+            Quantidade de parcelas do pagamento.
+            Disponível apenas quando o pagamento for feito por cartão de crédito.
+          example: 3
+          default: 1
+      required:
+        - type
+        - value
+
+  # entregas
+  shippings:
+    type: array
+    items:
+      type: object
+      required:
+        - selected
+      properties:
+        selected:
+          type: string
+          example: correios.pac
+          description: Forma de entrega escolhida.
+          enum:
+            - correios.pac
+            - correios.sedex
+            - correios.esedex
+            - correios.axado
+            - correios.axado.sedex
+            - correios.axado.esedex
+            - correios.axado.pac
+            - correios
+            - 04510
+            - 04014
+            - 81019
+            - axado
+            - PAC
+            - Sedex
+            - e-Sedex
+            - TranspoFrete
+            - shipment.method.carrier
+            - carrier.axado
+            - shipping.method.pickuponplace
+            - shipping.method.bipboy
+            - shipping.method.braspress
+            - shipping.method.jamef
+            - shipping.method.transpofrete
+            - shipping.method.jadlog
+            - shipping.method.intelipost
+            - shipping.method.datafrete
+            - shipping.method.shippify
+            - shipping.method.asaplog
+            - shipping.method.activeonsupply
+        shoppingStoreReferenceCode:
+          description: |
+            Loja do carrinho correspondente à entrega selecionada.
+          type: string
+          example: shoppingStoreExample
+
+  # atributos personalizados de pedido
+  attributeValues:
+    type: array
+    items:
+      type: object
+      properties:
+        referenceCode:
+          type: string
+          example: observacao
+        value:
+          type: string
+          example: Observação do pedido.
+
+  # impostos
+  taxes:
+    type: boolean
+    description: |
+      Define se sobre o pedido devem ou não ser calculados impostos.
+    default: false
+
+  # dados de antifraude
+  anti-fraud:
+    type: object
+    properties:
+      session:
+        type: object
+        properties:
+          id:
+            type: string
+            example: 7560cd692363d42db7686b7d4635f14e

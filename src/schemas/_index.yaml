@@ -1,0 +1,2 @@
+CheckoutRequest:
+  $ref: "./checkout/finish.request.yaml"
